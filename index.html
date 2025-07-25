@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>agh</title>
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+  >
+  <style>
+    html, body {
+      height: 100%;
+      margin: 0;
+    }
+
+    .fullscreen-container {
+      height: 100vh;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .center-overlay {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 10;
+      text-align: center;
+      color: white; /* White text color */
+      background: rgba(0, 0, 0, 0.6); /* Semi-transparent dark background */
+      padding: 2rem;
+      border-radius: 1rem;
+    }
+
+    #titleText {
+      min-height: 4em;
+    }
+
+    video {
+      display: block;
+    }
+
+    .background-image {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url('sky.jpg'); /* Replace with your image path */
+      background-size: cover;
+      background-position: center;
+      z-index: 5;
+      transition: opacity 1s ease;
+    }
+
+    .background-image.hidden {
+      opacity: 0;
+      pointer-events: none;
+    }
+  </style>
+</head>
+<body class="bg-dark text-dark">
+
+  <div class="fullscreen-container d-flex justify-content-center align-items-center">
+
+    <!-- Background image layer -->
+    <div id="bgImage" class="background-image"></div>
+
+    <!-- Overlay text and button -->
+    <div id="overlay" class="center-overlay">
+      <h2 id="titleText" class="mb-3"></h2>
+      <button id="playButton" class="btn btn-primary btn-lg" style="display: none;">Click me</button>
+    </div>
+
+    <!-- Video player -->
+    <div class="ratio ratio-16x9" style="max-width: 90%; max-height: 90%;">
+      <video id="myVideo" preload="metadata" class="w-100 h-100">
+        <source src="RickRoll but make it Anime.mp4" type="video/mp4" />
+        Your browser doesn’t support HTML5 video.
+      </video>
+    </div>
+  </div>
+
+  <script>
+    const fullText = `Wa hafen Vella? Wa a yu crayeng agen? Ay no, Vamfire rayts? Vamfayr wil feyt to me! Ay prutek yu vela!`;
+    const words = fullText.split(" ");
+    const titleElement = document.getElementById("titleText");
+    const playButton = document.getElementById("playButton");
+    const video = document.getElementById("myVideo");
+    const overlay = document.getElementById("overlay");
+    const bgImage = document.getElementById("bgImage");
+
+    let index = 0;
+
+    function typeWords() {
+      if (index < words.length) {
+        titleElement.textContent += (index === 0 ? "" : " ") + words[index];
+        index++;
+        setTimeout(typeWords, 250);
+      } else {
+        playButton.style.display = "inline-block";
+      }
+    }
+
+    typeWords();
+
+    playButton.addEventListener("click", () => {
+      video.muted = false;
+      video.play().then(() => {
+        overlay.style.display = "none";
+        bgImage.classList.add("hidden"); // Hide background image
+      }).catch(err => {
+        alert("Playback failed: " + err);
+      });
+    });
+  </script>
+
+</body>
+</html>
