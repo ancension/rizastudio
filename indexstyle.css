@@ -1,0 +1,552 @@
+/* All CSS from <style> in index.html pasted here */
+@font-face {
+  font-family: 'BrittanySignature';
+  src: url('ASSETS/BrittanySignature.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+body {
+  margin: 0;
+  font-family: 'Roboto Mono', monospace;
+  background: #fff;
+  font-size: 22px;
+}
+.header {
+  text-align: center;
+  padding: 48px 0 32px 0;
+  background: #fff;
+}
+.logo {
+  font-family: 'BrittanySignature';
+  font-size: 4rem;
+  color: #a48be0;
+  letter-spacing: 2px;
+  margin-bottom: 32px;
+  display: block;
+  /* Add text shadow for a glowing effect */
+  text-shadow:
+    0 2px 8px rgba(135, 98, 219, 0.573),
+    0 4px 24px rgba(55, 39, 90, 0.427),
+    0 1px 0 #fff;
+}
+.nav-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 60px;
+  margin-top: 24px;
+}
+.nav-btn {
+  padding: 18px 70px;
+  border: none;
+  border-radius: 40px;
+  font-size: 1.5rem;
+  font-family: 'Roboto Mono', monospace;
+  cursor: pointer;
+  transition: transform 0.15s, background 0.2s, color 0.2s;
+  will-change: transform;
+  font-weight: 400;
+}
+.nav-btn:active,
+.nav-btn:focus {
+  outline: none;
+}
+.nav-btn:hover {
+  transform: scale(1.12);
+}
+.nav-btn.about {
+  background: #4a5fd3;
+  color: #fff;
+}
+.nav-btn.portfolio {
+  background: #a48be0;
+  color: #fff;
+}
+.nav-btn.resume {
+  background: #ff7eb3;
+  color: #fff;
+}
+
+/* About Me Section */
+.about-section-wrapper {
+  position: relative;
+  width: 100%;
+  margin-top: 48px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  min-height: 420px; /* Ensures wrapper is at least as tall as the image */
+}
+.about-img {
+  position: absolute;
+  left: 50px;
+  top: -40px; /* Adjust this value for overlap */
+  width: 400px;
+  height: 420px;
+  object-fit: cover;
+  object-position: center top;
+  border-radius: 32px 0 0 0;
+  z-index: 2;
+}
+.about-container {
+  width: 100%;
+  height: 380px; /* Match image height so bottom edges align */
+  border-radius: 40px 40px 32px 32px;
+  background: linear-gradient(90deg, #4a5fd3 0%, #a48be0 60%, #ff7eb3 100%);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.324);
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  position: relative;
+  padding-left: 390px; /* 400px image width + 50px left offset - adjust if needed */
+  box-sizing: border-box;
+  overflow: visible;
+}
+.about-texts {
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  text-align: right;
+  padding: 0 56px 0 0;
+  position: relative;
+  left: -150px;
+  top: 0px; /* Increase to move text down, decrease to move up */
+}
+.about-hi {
+  font-size: 1.4rem;
+  font-family: 'Roboto Mono', monospace;
+  margin-bottom: 12px;
+  font-weight: 400;
+  letter-spacing: 1px;
+  /* Control "Heya, I'm" position here: */
+  margin-right: 300px; /* Increase to move further left, decrease to move right */
+  margin-top: -50px;   /* Increase to move down, decrease to move up */
+}
+.about-name {
+  font-family: 'BrittanySignature';
+  font-size: 5rem;
+  font-weight: normal;
+  margin-bottom: 0;
+  margin-top: 20px;
+  line-height: 1.1;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.10);
+  /* Control full name position here: */
+  margin-right: 0px; /* Increase to move further right, decrease to move left */
+}
+/* Sticky up-arrow */
+.scroll-top-btn {
+  position: fixed;
+  bottom: 32px;
+  right: 32px;
+  background: #a48be0;
+  border: none;
+  border-radius: 50%;
+  width: 56px;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(164,139,224,0.18);
+  z-index: 1000;
+  transition: background 0.2s, transform 0.15s;
+}
+.scroll-top-btn:hover {
+  background: #7c5fc7;
+  transform: scale(1.12);
+}
+.scroll-top-btn svg {
+  width: 32px;
+  height: 32px;
+  fill: #fff;
+}
+#about-me-details {
+  margin: 48px auto 0 auto;
+  max-width: 98vw;
+  display: flex;
+  justify-content: center;
+}
+.about-me-container {
+  width: 100%;
+  max-width: 1350px;
+  border-radius: 55px;
+  background: linear-gradient(90deg, #4a5fd3 0%, #a48be0 60%, #ff7eb3 100%);
+  padding: 55px 55px 55px 55px;
+  box-sizing: border-box;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.10);
+  margin: 0 0 40px 0;
+  position: relative;
+}
+.about-me-title {
+  font-family: 'BrittanySignature', cursive;
+  font-size: 3.5rem;
+  color: #fff;
+  margin-bottom: 0;
+  margin-left: 8px;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.10);
+}
+.about-me-content {
+  font-family: 'Roboto Mono', monospace;
+  font-size: 1rem;
+  color: #fff;
+  line-height: 1.7;
+  letter-spacing: 1px;
+  max-width: 1200px;
+  margin: 0 auto;
+  white-space: pre-line;
+}
+.about-me-content p {
+  margin-bottom: 0;
+  margin-top: -20px;
+}
+.about-me-content p:last-child {
+  margin-bottom: 0;
+}
+
+#portfolio-section {
+  margin: 0 auto;
+  max-width: 1400px;
+  padding: 0px 16px 64px 16px;
+}
+.portfolio-header {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-bottom: 12px;
+  position: relative;
+  top: 90px; /* Adjust this value to move "Portfolio" lower */
+}
+.portfolio-title {
+  font-family: 'BrittanySignature', cursive;
+  font-size: 4rem;
+  color: #ff7eb3;
+  text-shadow: 0 4px 16px rgba(255,126,179,0.18), 0 1px 0 #fff;
+  margin-right: 32px;
+}
+.portfolio-tabs {
+  display: flex;
+  gap: 0;
+  margin-bottom: 0;
+  margin-left: 72px;
+  position: relative;
+  z-index: 2;
+}
+.portfolio-tab {
+  font-family: 'Roboto Mono', monospace;
+  font-size: 1.6rem;
+  padding: 24px 48px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  background: #5a73fa;
+  color: #fff;
+  border-radius: 40px 40px 0 0;
+  margin-right: -16px;
+  transition: background 0.2s, color 0.2s, z-index 0.2s;
+  z-index: 1;
+  position: relative;
+}
+.portfolio-tab.active[data-tab="personal"] {
+  background: #5a73fa;
+  color: #fff;
+  z-index: 3;
+}
+.portfolio-tab.active[data-tab="group"] {
+  background: #a48be0;
+  color: #fff;
+  z-index: 3;
+}
+.portfolio-tab.active[data-tab="commissioned"] {
+  background: #ff7eb3;
+  color: #fff;
+  z-index: 3;
+}
+.portfolio-tab:not(.active) {
+  opacity: 0.85;
+  z-index: 2;
+}
+.portfolio-content {
+  background: #5a73fa;
+  border-radius: 40px;
+  min-height: 340px; /* Change from 500px to 340px */
+  margin-top: -8px;
+  position: relative;
+  z-index: 1;
+  transition: background 0.2s;
+  box-shadow: 0 8px 32px rgba(90,115,250,0.10);
+  padding: 32px 32px 32px 32px;
+}
+.portfolio-folder {
+  display: none;
+  min-height: 220px; /* Change from 400px to 220px */
+  /* Add more styling as needed */
+}
+.portfolio-folder.active {
+  display: block;
+}
+/* Change background color of content based on active tab */
+.portfolio-tab.active[data-tab="personal"] ~ .portfolio-content {
+  background: #5a73fa;
+}
+.portfolio-tab.active[data-tab="group"] ~ .portfolio-content {
+  background: #a48be0;
+}
+.portfolio-tab.active[data-tab="commissioned"] ~ .portfolio-content {
+  background: #ff7eb3;
+}
+.personal-category-link {
+  font-family: 'Roboto Mono', monospace;
+  font-size: 2rem;
+  color: #fff;
+  background: rgba(255,255,255,0.10);
+  padding: 18px 44px;
+  border-radius: 32px;
+  text-decoration: none;
+  transition: background 0.18s, color 0.18s, transform 0.15s;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  font-weight: 700;
+  letter-spacing: 1px;
+  display: inline-block;
+}
+.personal-category-link:hover {
+  background: #a48be0;
+  color: #fff;
+  transform: scale(1.06);
+}
+.personal-categories-list {
+  display: flex !important;
+  flex-direction: row !important;
+  gap: 64px;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.personal-col {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+/* Responsive: stack columns on small screens */
+@media (max-width: 900px) {
+  .personal-categories-list {
+    flex-direction: column !important;
+    gap: 0;
+    align-items: stretch;
+  }
+  .personal-col {
+    gap: 18px;
+  }
+}
+/* Responsive */
+@media (max-width: 900px) {
+    .about-section-wrapper {
+      flex-direction: column;
+      align-items: center;
+      min-height: unset;
+    }
+    .about-img {
+      position: static;
+      width: 160px;
+      height: 200px;
+      border-radius: 32px 32px 0 0;
+      margin: 0 auto;
+      display: block;
+      top: unset;
+      left: unset;
+      transform: none;
+    }
+    .about-container {
+      flex-direction: column;
+      align-items: center;
+      border-radius: 32px;
+      min-height: unset;
+      padding-left: 0;
+      padding-top: 24px;
+      height: auto;
+    }
+    .about-texts {
+      padding: 18px 8px 18px 8px;
+      text-align: center;
+      align-items: center;
+      min-height: unset;
+      left: 0;
+      top: 0;
+    }
+    .about-hi {
+      font-size: clamp(1rem, 3vw, 1.2rem) !important;
+      margin-bottom: 8px;
+      margin-right: 0;
+      margin-top: 0;
+    }
+    .about-name {
+      font-size: clamp(1.5rem, 7vw, 2.2rem) !important;
+      margin-top: 8px;
+      margin-right: 0;
+    }
+    .about-me-container {
+      padding: 28px 12px 32px 12px;
+      border-radius: 24px;
+    }
+    .about-me-title {
+      font-size: 2rem;
+      margin-bottom: 0;
+      margin-left: 0;
+      text-align: center;
+    }
+    .about-me-content {
+      font-size: 0.92rem;
+      padding: 0 2px;
+    }
+
+  .portfolio-header {
+    justify-content: center;
+    margin-bottom: 8px;
+    top: 32px; /* Less offset on mobile */
+  }
+  .portfolio-title {
+    font-size: 2.2rem;
+    margin-right: 0;
+  }
+  .portfolio-tabs {
+    margin-left: 0;
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .portfolio-tab {
+    border-radius: 32px 32px 0 0;
+    margin-right: 0;
+    margin-bottom: 4px;
+    font-size: 1.1rem;
+    padding: 16px 0;
+  }
+  .portfolio-content {
+    border-radius: 24px;
+    padding: 16px 6px;
+    min-height: 200px;
+  }
+}
+/* Resume Section Styles */
+#resume-section {
+  margin: 0 auto;
+  max-width: 1100px;
+  padding: 0px 16px 64px 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.resume-header {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-bottom: 12px;
+  width: 100%;
+}
+
+.resume-title {
+  font-family: 'BrittanySignature', cursive;
+  font-size: 4rem;
+  color: #ff7eb3;
+  text-shadow: 0 4px 16px rgba(255,126,179,0.18), 0 1px 0 #fff;
+  margin-right: 32px;
+}
+
+.resume-container {
+  background: linear-gradient(90deg, #4a5fd3 0%, #a48be0 60%, #ff7eb3 100%);
+  border-radius: 40px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.10);
+  padding: 48px 48px 40px 48px;
+  color: #fff;
+  font-family: 'Roboto Mono', monospace;
+  width: 100%;
+  box-sizing: border-box;
+  margin-top: 16px;
+}
+
+.resume-name {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+  letter-spacing: 1px;
+}
+
+.resume-contact {
+  font-size: 1rem;
+  margin-bottom: 24px;
+  line-height: 1.5;
+}
+
+.resume-contact a {
+  color: #fff;
+  text-decoration: underline dotted;
+}
+
+.resume-section-title {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-top: 28px;
+  margin-bottom: 6px;
+  letter-spacing: 1px;
+  color: #fff;
+}
+
+.resume-section-content {
+  font-size: 1rem;
+  margin-bottom: 10px;
+  line-height: 1.7;
+}
+
+.resume-list {
+  list-style: disc inside;
+  padding-left: 0;
+  margin: 0 0 0 16px;
+}
+
+.resume-list li {
+  margin-bottom: 10px;
+}
+
+.resume-date {
+  font-size: 0.95em;
+  color: #ffe0f7;
+  margin-left: 8px;
+}
+
+.resume-bullet {
+  display: block;
+  margin-left: 18px;
+  font-size: 0.98em;
+  color: #e3e3e3;
+}
+
+/* Responsive for Resume */
+@media (max-width: 900px) {
+  #resume-section {
+    padding: 32px 4px 32px 4px;
+  }
+  .resume-header {
+    justify-content: center;
+    margin-bottom: 8px;
+  }
+  .resume-title {
+    font-size: 2.2rem;
+    margin-right: 0;
+  }
+  .resume-container {
+    padding: 14px 4px 14px 4px;
+    border-radius: 18px;
+    font-size: 0.92rem;
+  }
+  .resume-name {
+    font-size: 1.1rem !important;
+  }
+  .resume-section-title {
+    font-size: 1rem !important;
+  }
+  .resume-section-content,
+  .resume-list,
+  .resume-bullet,
+  .resume-date {
+    font-size: 0.92rem !important;
+    line-height: 1.6;
+  }
+}

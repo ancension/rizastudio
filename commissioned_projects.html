@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Commissioned Projects - Riza's Studio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="commissionstyle.css">
+</head>
+<body>
+  <div class="back-btn-bar">
+    <button class="nav-btn back" onclick="window.location.href='index.html'">← Back</button>
+  </div>
+  <header class="header">
+    <span class="logo">Commissioned Projects</span>
+  </header>
+  <nav class="category-tabs">
+    <button class="category-tab active" data-tab="button-eye" onclick="scrollToSection('button-eye-section')">Button-eye Character</button>
+    <button class="category-tab" data-tab="emotes" onclick="scrollToSection('emotes-section')">Emotes & Character Sheet</button>
+  </nav>
+
+  <main class="category-content">
+    <section id="button-eye-section" class="category-section active">
+      <div class="category-header">Button-eye Character</div>
+      <hr>
+      <h2>Black Clover Characters (Commissioned by Ton Ton Corpus)</h2>
+      <div class="logo-row">
+        <div class="logo-block">
+          <img src="PROJECTS/Commissioned/BC Characters/BC Asta Front Ton Comm.png" alt="Gallery Image 2" class="logo-img">
+          <div class="portfolio-caption">Asta</div>
+        </div>
+        <div class="logo-block">
+          <img src="PROJECTS/Commissioned/BC Characters/BC Fuegoleon Front Ton Comm.png" alt="Gallery Image 3" class="logo-img">
+          <div class="portfolio-caption">Fuegoleon</div>
+        </div>
+        <div class="logo-block">
+          <img src="PROJECTS/Commissioned/BC Characters/BC Gauche Front Ton Comm.png" alt="Gallery Image 3" class="logo-img">
+          <div class="portfolio-caption">Gauche</div>
+        </div>
+        <div class="logo-block">
+          <img src="PROJECTS/Commissioned/BC Characters/BC Gordon Front Ton Comm.png" alt="Gallery Image 1" class="logo-img">
+          <div class="portfolio-caption">Gordon</div>
+        </div>
+      </div>
+      <div class="logo-row">
+        <div class="logo-block">
+          <img src="PROJECTS/Commissioned/BC Characters/BC Jack Front Ton Comm.png" alt="Gallery Image 4" class="logo-img">
+          <div class="portfolio-caption">Jack</div>
+        </div>
+        <div class="logo-block">
+          <img src="PROJECTS/Commissioned/BC Characters/BC Julius Front Ton Comm.png" alt="Gallery Image 2" class="logo-img">
+          <div class="portfolio-caption">Julius</div>
+        </div>
+        <div class="logo-block">
+          <img src="PROJECTS/Commissioned/BC Characters/BC Luck Front Ton Comm.png" alt="Gallery Image 3" class="logo-img">
+          <div class="portfolio-caption">Luck</div>
+        </div>
+        <div class="logo-block">
+          <img src="PROJECTS/Commissioned/BC Characters/BC Noelle Front Ton Comm.png" alt="Gallery Image 3" class="logo-img">
+          <div class="portfolio-caption">Noelle</div>
+        </div>
+      </div>
+      <div class="logo-row">
+        <div class="logo-block">
+          <img src="PROJECTS/Commissioned/BC Characters/BC Vanessa Front Ton Comm.png" alt="Gallery Image 1" class="logo-img">
+          <div class="portfolio-caption">Vanessa</div>
+        </div>
+        <div class="logo-block">
+          <img src="PROJECTS/Commissioned/BC Characters/BC Yami Front Ton Comm.png" alt="Gallery Image 4" class="logo-img">
+          <div class="portfolio-caption">Yami</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="emotes-section" class="category-section">
+      <div class="category-header">Emotes & Character Sheet</div>
+      <hr>
+      <h2>Emotes & Character Sheet</h2>
+      <h6>Do not steal/redraw/repost in any way. Credits to the (VTuber) clients</h6>
+      <div class="logo-row">
+        <div class="logo-block">
+          <img src="PROJECTS/Commissioned/emotes1.png" alt="Gallery Image 1" class="logo-img">
+        </div>
+        <div class="logo-block">
+          <img src="PROJECTS/Commissioned/emotes2.png" alt="Gallery Image 4" class="logo-img">
+        </div>
+        <div class="logo-block">
+          <img src="PROJECTS/Commissioned/emotes3.png" alt="Gallery Image 4" class="logo-img">
+        </div>
+      </div>
+      <div class="logo-row">
+        <div class="logo-block">
+          <img src="PROJECTS/Commissioned/emotes4.png" alt="Gallery Image 1" class="logo-img">
+        </div>
+        <div class="logo-block">
+          <img src="PROJECTS/Commissioned/emotes5.png" alt="Gallery Image 4" class="logo-img">
+        </div>
+        <div class="logo-block">
+          <img src="PROJECTS/Commissioned/emotes6.png" alt="Gallery Image 4" class="logo-img">
+        </div>
+      </div>
+      <div class="logo-row">
+        <div class="logo-block">
+          <img src="PROJECTS/Commissioned/charsheet2.png" alt="Gallery Image 1" class="logo-img">
+        </div>
+      </div>
+    </section>
+  </main>
+
+<script>
+function scrollToSection(sectionId) {
+  const section = document.getElementById(sectionId);
+  if (section) section.scrollIntoView({behavior: 'smooth'});
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+  const tabs = document.querySelectorAll('.category-tab');
+  const sections = document.querySelectorAll('.category-section');
+  const content = document.querySelector('.category-content');
+  const pageKey = window.location.pathname.split('/').pop() + '-active-tab';
+
+  // Helper: Activate tab/section by tabName (data-tab)
+  function activateTab(tabName, scroll = false) {
+    tabs.forEach(t => t.classList.remove('active'));
+    sections.forEach(s => s.classList.remove('active'));
+    const tab = Array.from(tabs).find(t => t.getAttribute('data-tab') === tabName);
+    const section = document.getElementById(tabName + '-section');
+    if (tab && section) {
+      tab.classList.add('active');
+      section.classList.add('active');
+      if (scroll) section.scrollIntoView({behavior: 'smooth'});
+      // Change background color (customize as needed)
+      if(content) {
+        if(tabName === 'animations' || tabName === 'ojt' || tabName === 'button-eye') {
+          content.style.background = '#5a73fa';
+        } else if(tabName === 'artworks' || tabName === 'school' || tabName === 'emotes') {
+          content.style.background = '#a48be0';
+        } else if(tabName === 'games' || tabName === 'shortfilm') {
+          content.style.background = '#ff7eb3';
+        } else if(tabName === 'marketing') {
+          content.style.background = '#4a5fd3';
+        } else if(tabName === 'music') {
+          content.style.background = '#8fd3ff';
+        } else if(tabName === 'video') {
+          content.style.background = '#ffb38f';
+        }
+      }
+      // Save to localStorage
+      localStorage.setItem(pageKey, tabName);
+    }
+  }
+
+  // Tab click handler
+  tabs.forEach(tab => {
+    tab.addEventListener('click', function(e) {
+      const tabName = tab.getAttribute('data-tab');
+      activateTab(tabName, false);
+      // Update URL hash for deep linking
+      history.replaceState(null, '', '#' + tabName + '-section');
+    });
+  });
+
+  // On page load: check hash or localStorage
+  let initialTab = null;
+  if (window.location.hash) {
+    const hash = window.location.hash.replace('#', '');
+    const section = document.getElementById(hash);
+    if (section) {
+      const tabName = hash.replace('-section', '');
+      initialTab = tabName;
+      activateTab(tabName, true);
+    }
+  }
+  if (!initialTab) {
+    const savedTab = localStorage.getItem(pageKey);
+    if (savedTab && Array.from(tabs).some(t => t.getAttribute('data-tab') === savedTab)) {
+      activateTab(savedTab, false);
+    }
+  }
+});
+</script>
+
+</body>
+</html>

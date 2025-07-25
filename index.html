@@ -1,120 +1,232 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>test</title>
-  <link
-    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
-    rel="stylesheet"
-  >
-  <style>
-    html, body {
-      height: 100%;
-      margin: 0;
-    }
-
-    .fullscreen-container {
-      height: 100vh;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .center-overlay {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      z-index: 10;
-      text-align: center;
-      color: white; /* White text color */
-      background: rgba(0, 0, 0, 0.6); /* Semi-transparent dark background */
-      padding: 2rem;
-      border-radius: 1rem;
-    }
-
-    #titleText {
-      min-height: 4em;
-    }
-
-    video {
-      display: block;
-    }
-
-    .background-image {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-image: url('sky.jpg'); /* Replace with your image path */
-      background-size: cover;
-      background-position: center;
-      z-index: 5;
-      transition: opacity 1s ease;
-    }
-
-    .background-image.hidden {
-      opacity: 0;
-      pointer-events: none;
-    }
-  </style>
+  <meta charset="UTF-8">
+  <title>Riza's Studio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="indexstyle.css">
 </head>
-<body class="bg-dark text-dark">
-
-  <div class="fullscreen-container d-flex justify-content-center align-items-center">
-
-    <!-- Background image layer -->
-    <div id="bgImage" class="background-image"></div>
-
-    <!-- Overlay text and button -->
-    <div id="overlay" class="center-overlay">
-      <h2 id="titleText" class="mb-3"></h2>
-      <button id="playButton" class="btn btn-primary btn-lg" style="display: none;">Click me</button>
+<body>
+  <header class="header">
+    <span class="logo">Riza's Studio</span>
+    <div class="nav-buttons">
+      <button class="nav-btn about" onclick="scrollToAboutMe()">About Me</button>
+      <button class="nav-btn portfolio" onclick="scrollToPortfolio()">Portfolio</button>
+      <button class="nav-btn resume" onclick="scrollToResume()">Resume</button>
     </div>
+  </header>
 
-    <!-- Video player -->
-    <div class="ratio ratio-16x9" style="max-width: 90%; max-height: 90%;">
-      <video id="myVideo" preload="metadata" class="w-100 h-100">
-        <source src="RickRoll but make it Anime.mp4" type="video/mp4" />
-        Your browser doesn’t support HTML5 video.
-      </video>
+  <section id="about">
+    <div class="about-section-wrapper">
+      <img class="about-img" src="ME/Riza Raihanee Romulo C1.png" alt="Riza Romulo">
+      <div class="about-container">
+        <div class="about-texts">
+          <div class="about-hi">Heya, I'm</div>
+          <div class="about-name">Riza Raihanee T. Romulo</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+<section id="about-me-details">
+  <div class="about-me-container">
+    <div class="about-me-title">About me</div>
+    <div class="about-me-content">
+      <p>
+        I'm a Digital Artist with freelance experience since 2021. I also go by "Itz Nyx/Nyxie" and "MrsSandwich" online. My journey began with traditional art at 13, later growing into digital illustration using just my phone. Over the years, my creative interests have expanded into graphic design, animation, video editing, and short film production.
+        <br>I hold a 3-year Diploma in Digital Arts Technology, where I refined my skills in 2D/3D animation, video editing, and graphic design. I'm passionate about exploring new tools and techniques, always eager to learn and grow through every creative challenge. This mindset fuels the variety found in my work—from commissioned pieces to personal and academic projects.
+        <br>Beyond digital art, I enjoy songwriting, composing, crocheting, and filmmaking. I'm always open to commissions and collaborations that bring ideas to life through visual storytelling.
+      </p>
     </div>
   </div>
+</section>
 
-  <script>
-    const fullText = `Wa hafen Vella? Wa a yu crayeng agen? Ay no, Vamfire rayts? Vamfayr wil feyt to me! Ay prutek yu vela!`;
-    const words = fullText.split(" ");
-    const titleElement = document.getElementById("titleText");
-    const playButton = document.getElementById("playButton");
-    const video = document.getElementById("myVideo");
-    const overlay = document.getElementById("overlay");
-    const bgImage = document.getElementById("bgImage");
+<section id="portfolio-section">
+  <div class="portfolio-header">
+    <span class="portfolio-title">Portfolio</span>
+  </div>
+  <div class="portfolio-tabs">
+    <button class="portfolio-tab active" data-tab="personal">PERSONAL</button>
+    <button class="portfolio-tab" data-tab="group">GROUP/TEAM</button>
+    <button class="portfolio-tab" data-tab="commissioned">COMMISSIONED</button>
+  </div>
+  <div class="portfolio-content">
+    <div class="portfolio-folder personal-folder active">
+      <div class="personal-categories-list" style="margin-top: 32px;">
+  <div class="personal-col">
+    <a href="personal_projects.html#animations-section" class="personal-category-link">Animations</a>
+    <a href="personal_projects.html#artworks-section" class="personal-category-link">Artworks</a>
+    <a href="personal_projects.html#games-section" class="personal-category-link">Games & Webpages</a>
+  </div>
+  <div class="personal-col">
+    <a href="personal_projects.html#marketing-section" class="personal-category-link">Marketing Graphics</a>
+    <a href="personal_projects.html#music-section" class="personal-category-link">Original Music</a>
+    <a href="personal_projects.html#video-section" class="personal-category-link">Video Editing</a>
+  </div>
+</div>
+    </div>
+    <div class="portfolio-folder group-folder">
+      <div class="personal-categories-list" style="margin-top: 32px;">
+        <div class="personal-col">
+          <a href="group_projects.html#ojt-section" class="personal-category-link">OJT</a>
+          <a href="group_projects.html#school-section" class="personal-category-link">School Project</a>
+          <a href="group_projects.html#shortfilm-section" class="personal-category-link">Short Films</a>
+        </div>
+      </div>
+    </div>
+    <div class="portfolio-folder commissioned-folder">
+      <div class="personal-categories-list" style="margin-top: 32px;">
+        <div class="personal-col">
+          <a href="commissioned_projects.html#button-eye-section" class="personal-category-link">Button-eye Character</a>
+          <a href="commissioned_projects.html#emotes-section" class="personal-category-link">Emotes & Character Sheet</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
-    let index = 0;
+<section id="resume-section">
+  <div class="resume-header">
+    <span class="resume-title">Resume</span>
+  </div>
+  <div class="resume-container">
+    <div class="resume-name">RIZA RAIHANEE T. ROMULO</div>
+    <div class="resume-contact">
+      6200, Dumaguete City, Negros Oriental<br>
+      Email Address: <a href="https://mail.google.com/mail/?view=cm&to=rizaraihanee.romulo18@gmail.com" target="_blank" rel="noopener">rizaraihanee.romulo18@gmail.com</a>
+    </div>
+    <div class="resume-section-title">Objectives</div>
+    <div class="resume-section-content">
+      Passionate and adaptable Digital Artist with skills in visual design and multimedia production. Eager to contribute artistic skills to a dynamic team while continuing to grow professionally through meaningful creative work.
+    </div>
+    <div class="resume-section-title">Personal Information</div>
+    <div class="resume-section-content">
+      <ul class="resume-list">
+        <li>Date of Birthday: November 18, 2003</li>
+        <li>Age: 21</li>
+        <li>Civil Status: Single</li>
+        <li>Nationality: Filipino</li>
+      </ul>
+    </div>
+    <div class="resume-section-title">Educational Background</div>
+    <div class="resume-section-content">
+      <ul class="resume-list">
+        <li>
+          <strong>Tertiary Level Graduate</strong> (Diploma in Digital Arts Technology)<br>
+          Metro Dumaguete College Inc.<br>
+          <span class="resume-date">Oct. 2022 – July 2025</span>
+        </li>
+        <li>
+          <strong>Secondary Level Graduate</strong><br>
+          Taclobo National High School<br>
+          <span class="resume-date">July 2016 – July 2022</span>
+        </li>
+        <li>
+          <strong>Primary Level Graduate</strong><br>
+          Magsaysay Memorial Elementary School<br>
+          <span class="resume-date">June 2010 – March 2016</span>
+        </li>
+      </ul>
+    </div>
+    <div class="resume-section-title">Work Experiences</div>
+    <div class="resume-section-content">
+      <ul class="resume-list">
+        <li>
+          <strong>Freelance – Digital Artist</strong> (Oct. 2021 – Present)<br>
+          Self-employed<br>
+          <span class="resume-bullet">Creates commissioned designs, illustrations and graphic artworks for various clients</span>
+        </li>
+        <li>
+          <strong>OJT – Graphic Artist</strong> (K5 News FM, Dumaguete City, Aug. 2023 – Oct. 2023)<br>
+          <span class="resume-bullet">Designed ad posters and livestream visual graphics</span>
+        </li>
+        <li>
+          <strong>OJT – Graphic Designer</strong> (Dumaguete Asian Printers, July 2024 – Sept. 2024)<br>
+          <span class="resume-bullet">Designed marketing materials, posters, printing and layout projects</span>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
 
-    function typeWords() {
-      if (index < words.length) {
-        titleElement.textContent += (index === 0 ? "" : " ") + words[index];
-        index++;
-        setTimeout(typeWords, 250);
-      } else {
-        playButton.style.display = "inline-block";
-      }
-    }
+  <!-- Sticky up-arrow button -->
+  <button class="scroll-top-btn" onclick="window.scrollTo({top:0, behavior:'smooth'})" aria-label="Scroll to top">
+    <svg viewBox="0 0 24 24">
+      <path d="M12 2L2 22h20L12 2zm0 3.84L17.66 20H6.34L12 5.84z"/>
+    </svg>
+  </button>
 
-    typeWords();
-
-    playButton.addEventListener("click", () => {
-      video.muted = false;
-      video.play().then(() => {
-        overlay.style.display = "none";
-        bgImage.classList.add("hidden"); // Hide background image
-      }).catch(err => {
-        alert("Playback failed: " + err);
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const tabs = document.querySelectorAll('.portfolio-tab');
+    const folders = document.querySelectorAll('.portfolio-folder');
+    const content = document.querySelector('.portfolio-content');
+    tabs.forEach(tab => {
+      tab.addEventListener('click', function() {
+        // Remove active from all tabs and folders
+        tabs.forEach(t => t.classList.remove('active'));
+        folders.forEach(f => f.classList.remove('active'));
+        // Add active to clicked tab and corresponding folder
+        tab.classList.add('active');
+        const tabName = tab.getAttribute('data-tab');
+        document.querySelector(`.${tabName}-folder`).classList.add('active');
+        // Change content background color
+        if(tabName === 'personal') {
+          content.style.background = '#5a73fa';
+        } else if(tabName === 'group') {
+          content.style.background = '#a48be0';
+        } else if(tabName === 'commissioned') {
+          content.style.background = '#ff7eb3';
+        }
       });
     });
-  </script>
+  });
+
+  // Center About Me container in viewport
+  function scrollToAboutMe() {
+    const aboutMe = document.getElementById('about-me-details');
+    const rect = aboutMe.getBoundingClientRect();
+    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    const offset = rect.top + scrollTop - (window.innerHeight - rect.height) / 2;
+    window.scrollTo({ top: offset, behavior: 'smooth' });
+  }
+
+  // Center Portfolio section in viewport
+  function scrollToPortfolio() {
+  const portfolio = document.getElementById('portfolio-section');
+  const rect = portfolio.getBoundingClientRect();
+  const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+  const sectionHeight = portfolio.offsetHeight;
+  const windowHeight = window.innerHeight;
+
+  // If section is taller than viewport, align top with a little margin
+  if (sectionHeight > windowHeight) {
+    const offset = rect.top + scrollTop - 32; // 32px margin from top
+    window.scrollTo({ top: offset, behavior: 'smooth' });
+  } else {
+    // Center vertically
+    const offset = rect.top + scrollTop - (windowHeight - sectionHeight) / 2;
+    window.scrollTo({ top: offset, behavior: 'smooth' });
+  }
+}
+
+  // Center Resume section in viewport
+  function scrollToResume() {
+  const resume = document.getElementById('resume-section');
+  const rect = resume.getBoundingClientRect();
+  const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+  const sectionHeight = resume.offsetHeight;
+  const windowHeight = window.innerHeight;
+
+  if (sectionHeight > windowHeight) {
+    const offset = rect.top + scrollTop - 32;
+    window.scrollTo({ top: offset, behavior: 'smooth' });
+  } else {
+    const offset = rect.top + scrollTop - (windowHeight - sectionHeight) / 2;
+    window.scrollTo({ top: offset, behavior: 'smooth' });
+  }
+}
+</script>
 
 </body>
 </html>
